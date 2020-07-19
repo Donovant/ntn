@@ -57,6 +57,9 @@ docker rmi ntn_challenge
 
 ### Future Improvements and Considerations
 These are my thoughts and considerations on future improvements and design thought process. They are in no particular order.
+- For the purposes of this example, I have downloaded the NTN-All-w.csv file and inclided it in the repo.
+- I would store the results from both ntn weekly endpoint calls in a database for faster retrieval. We could also automate the call to these files and update the database on a regular schedule. (I thought about implementing this using sqllite but didn't due to time constraints).
+- It would be beneficial to perform a check against the database, mentioned in the previous bullet, when validating a site_id that it is valid.
 - Move the common folder over to its own repo so it can be pulled in as a module where needed.
 - Functionalize the error_messages portion of the webargs schemas to adhere with DRY principles and clean the code up.
 - It could be beneficial to implement inheritance to the schemas to reduce duplicate code, the site_id arg and validation for example.
@@ -67,8 +70,6 @@ These are my thoughts and considerations on future improvements and design thoug
 - We could possibly use a fields.list type for the location argument. This could allow us to return more specific error messages pertaining to latitude or longitude. Another possibility here would be to make latitude and longitude into completely separate variables.
 - Depending on use cases etc we may want to return an error in the event that no sites are located within the radius provided for the ntn/site/info/by_radius endpoint.
 - Again, depending on use cases/current usage, we may want to change the timestamp input for start_date and end_date to match what is used by the ntn sites. I just used timestamps as thats what I'm comfortable with.
-- I would store the results from both ntn weekly endpoint calls in a database for faster retrieval. We could also automate the call to these files and update the database on a regular schedule. (I thought about implementing this using sqllite but didn't due to time constraints).
-- It would be beneficial to perform a check against the database, mentioned in the previous bullet, when validating a site_id that it is valid.
 - It may be beneficial to combine ntn/site/info/ and ntn/site/info/by_radius endpoints into the same function to again adhere with DRY principles and clean up code. I left these separate as I developed each endpoint individually.
 - I would add more/better markers for the test suite to make it easier to run tests for a specific case, parameter, or url.
 - I would change the file/folder structure of the test suite. The way this was implemented, the test.py file would get large and cumbersome quickly. It would be more beneficial to break this up (make separate files for each endpoint class or example.)
