@@ -26,9 +26,9 @@ docker-compose up
 ## Verifying Functionality Via HTTP Requests
 
 Open the browser of your choosing and navigate to each of the following websites (You can also click the links below and they will open in your default browser).:
-    - http://127.0.0.1:17177/v1.0/ntn/site/info/?site_id=AK01
-    - http://127.0.0.1:17177/v1.0/ntn/site/info/by_radius/?location=(65.1550,-147.4910)&radius=0.0
-    - http://127.0.0.1:17177/v1.0/ntn/samples/get/by_id/?site_id=AK01&start_date=1472688000&end_date=1475193600
+  - http://127.0.0.1:17177/v1.0/ntn/site/info/?site_id=AK01  
+  - http://127.0.0.1:17177/v1.0/ntn/site/info/by_radius/?location=(65.1550,-147.4910)&radius=0.0  
+  - http://127.0.0.1:17177/v1.0/ntn/samples/get/by_id/?site_id=AK01&start_date=1472688000&end_date=1475193600  
 
 ### Verifying Functionality Via Pytest
 In a different terminal window from the one running docker above, shell into the ntn container
