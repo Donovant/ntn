@@ -57,7 +57,7 @@ docker rmi ntn_challenge
 
 ### Future Improvements and Considerations
 These are my thoughts and considerations on future improvements and design thought process. They are in no particular order.
-- For the purposes of this example, I have downloaded the NTN-All-w.csv file and inclided it in the repo.
+- For the purposes of this example, I have downloaded the NTN-All-w.csv file and inclided it in the repo. (This takes way to long to download on the fly during a request.)
 - I would store the results from both ntn weekly endpoint calls in a database for faster retrieval. We could also automate the call to these files and update the database on a regular schedule. (I thought about implementing this using sqllite but didn't due to time constraints).
 - It would be beneficial to perform a check against the database, mentioned in the previous bullet, when validating a site_id that it is valid.
 - Move the common folder over to its own repo so it can be pulled in as a module where needed.
