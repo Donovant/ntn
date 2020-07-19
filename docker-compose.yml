@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  challenge:
+    restart: always
+    container_name: "ntn"
+    build: ~/Documents/Jobs/Applied/Trace/challenge
+    ports:
+      - "17177:80"
+    volumes:
+      - "~/Documents/Jobs/Applied/Trace/challenge/:/home/dusr/code"
