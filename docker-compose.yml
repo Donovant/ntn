@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  challenge:
+    restart: always
+    container_name: "ntn"
+    build: ./
+    ports:
+      - "17177:80"
+    volumes:
+      - "./:/home/dusr/code"
