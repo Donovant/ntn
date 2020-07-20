@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
   apt-get update && apt-get install -y software-properties-common && \
-  apt-get update && apt-get -y install cron && \
+  apt-get update && \
   apt-get install -y build-essential zlib1g-dev libnss3-dev libssl-dev libffi-dev wget vim supervisor nginx && \
   apt-get install -y python3.7 python3-pip && \
   ln -sf /usr/bin/python3.7 /usr/local/bin/python && \
@@ -19,16 +19,6 @@ RUN \
   python3.7 -m pip install -r /home/dusr/code/docker_files/dependencies.pip
 
 COPY . /home/dusr/code/
-
-# Add crontab file
-ADD cron_job.conf /root/crons.conf
-RUN chmod 644 /root/
-
-# Use crontab file
-RUN crontab /root/crons.conf
-
-# Start cron
-RUN cron
 
 EXPOSE 80
 WORKDIR /home/dusr/code

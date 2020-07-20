@@ -3,7 +3,7 @@
 ## Setting Up Service
 This assumes a user has Docker and Git installed.
 
-Clone the git repo
+Starting in your projects folder, clone the git repo
 ```sh
 git clone https://github.com/Donovant/ntn.git
 ```
@@ -50,9 +50,14 @@ Remove the ntn container
 docker rm ntn
 ```
 
-Finally, remove the ntn image
+Remove the ntn image
 ```sh
 docker rmi ntn_challenge
+```
+
+Remove the ntn directory from your projects
+```sh
+rm -rf ntn/
 ```
 
 ### Future Improvements and Considerations
@@ -73,4 +78,5 @@ These are my thoughts and considerations on future improvements and design thoug
 - It may be beneficial to combine ntn/site/info/ and ntn/site/info/by_radius endpoints into the same function to again adhere with DRY principles and clean up code. I left these separate as I developed each endpoint individually.
 - I would add more/better markers for the test suite to make it easier to run tests for a specific case, parameter, or url.
 - I would change the file/folder structure of the test suite. The way this was implemented, the test.py file would get large and cumbersome quickly. It would be more beneficial to break this up (make separate files for each endpoint class or example.)
-
+- The logging done in this repo is a bit archaic, given time its assumed this would be moved to an elk implementation or the like.
+- Add tests for lower and camelcase site_id's for the ntn/site/info and ntn/site/info/ and ntn/samples/get/by_id endpoints.

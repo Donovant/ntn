@@ -4,8 +4,8 @@ services:
   challenge:
     restart: always
     container_name: "ntn"
-    build: ~/Documents/Jobs/Applied/Trace/challenge
+    build: ./
     ports:
       - "17177:80"
     volumes:
-      - "~/Documents/Jobs/Applied/Trace/challenge/:/home/dusr/code"
+      - "./:/home/dusr/code"

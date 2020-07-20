@@ -1,7 +1,5 @@
 '''
 	This script is to create a logger object and return it to the script that called it.
-    Author: Donovan Torgerson
-    Email: Donovan@Torgersonlabs.com
 '''
 import logging
 
