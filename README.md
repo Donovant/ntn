@@ -80,3 +80,4 @@ These are my thoughts and considerations on future improvements and design thoug
 - I would change the file/folder structure of the test suite. The way this was implemented, the test.py file would get large and cumbersome quickly. It would be more beneficial to break this up (make separate files for each endpoint class or example.)
 - The logging done in this repo is a bit archaic, given time its assumed this would be moved to an elk implementation or the like.
 - Add tests for lower and camelcase site_id's for the ntn/site/info and ntn/samples/get/by_id endpoints.
+- Add tests for include_inactive ntn/site/info/by_radius argument.
