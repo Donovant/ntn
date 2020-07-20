@@ -30,7 +30,7 @@ Open the browser of your choosing and navigate to each of the following websites
   - http://127.0.0.1:17177/v1.0/ntn/site/info/by_radius/?location=(65.1550,-147.4910)&radius=0.0  
   - http://127.0.0.1:17177/v1.0/ntn/samples/get/by_id/?site_id=AK01&start_date=1472688000&end_date=1475193600  
 
-### Verifying Functionality Via Pytest
+## Verifying Functionality Via Pytest
 In a different terminal window from the one running docker above, shell into the ntn container
 ```sh
 docker exec -it ntn bash
@@ -42,7 +42,7 @@ pytest test.py
 ```
 After this completes, you should see 67 tests passed.
 
-### Cleanup
+## Cleanup
 To cleanup your system, stop the docker-compose service in the terminal window used above. To do this, hit Ctrl+C in that window.
 
 Remove the ntn container
@@ -60,7 +60,7 @@ Remove the ntn directory from your projects
 rm -rf ntn/
 ```
 
-### Future Improvements and Considerations
+## Future Improvements and Considerations
 These are my thoughts and considerations on future improvements and design thought process. They are in no particular order.
 - For the purposes of this example, I have downloaded the NTN-All-w.csv file and inclided it in the repo. (This takes way to long to download on the fly during a request.)
 - I would store the results from both ntn weekly endpoint calls in a database for faster retrieval. We could also automate the call to these files and update the database on a regular schedule. (I thought about implementing this using sqllite but didn't due to time constraints).
